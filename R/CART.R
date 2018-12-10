@@ -18,11 +18,10 @@
 #'
 #' @examples
 #' ## Load a Dataset
+#'  \dontrun{
 #' data(EGATUR)
-#'
 #' CART(GastoTotalD~pais+aloja+motivo,data=EGATUR)
-#'
-#'
+#'}
 #'
 #' @import rpart
 

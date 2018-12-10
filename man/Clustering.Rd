@@ -32,7 +32,7 @@ This is a modified kmeans clustering technique to automatize the number of group
 }
 \examples{
 ## Load a Dataset
-\dontrun{
+ \dontrun{
 data(EGATUR)
 modelFit <- Clustering(data=EGATUR[,c("A13","gastototal")])
 }

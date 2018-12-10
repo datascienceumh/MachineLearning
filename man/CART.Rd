@@ -32,10 +32,9 @@ Classification And Regression Tree is a simple technique to fit a relationship b
 }
 \examples{
 ## Load a Dataset
+ \dontrun{
 data(EGATUR)
-
 CART(GastoTotalD~pais+aloja+motivo,data=EGATUR)
-
-
+}
 
 }
