@@ -31,11 +31,10 @@ A MLA object of subclass Clustering
 This is a modified kmeans clustering technique to automatize the number of groups or clusters that can be partitioned the sample. Several techniques are used to obtain the best number of clusters.
 }
 \examples{
-if(interactive()){
 ## Load a Dataset
+\dontrun{
 data(EGATUR)
 modelFit <- Clustering(data=EGATUR[,c("A13","gastototal")])
 }
-
 
 }

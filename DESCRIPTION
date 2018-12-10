@@ -14,7 +14,7 @@ Description: A collection of routines created in the collaboration framework in 
         the Valencian Tourism Agency (AVT) <http://www.turisme.gva.es/opencms/opencms/turisme/es/index.jsp> and the Miguel Hernandez University. 
         The package provides a set of machine learning tools for pattern 
         detection, association and classification rules and feature selection 
-        even under massive data environments. Almiñana, M., Escudero, L. F., Pérez-Martín, A., Rabasa, A., & Santamaría, L. (2014)<doi:10.1007/s11750-012-0264-6>
+        even under massive data environments. Almiñana, Escudero, Pérez-Martín, Rabasa, and Santamaría (2014) <doi:10.1007/s11750-012-0264-6>.
 Depends: R (>= 3.3.0)
 Imports: NbClust, dplyr, formula.tools, magrittr, arules, rpart, FSelectorRcpp, crayon, ggplot2, rpart.plot
 License: AGPL-3

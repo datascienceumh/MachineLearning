@@ -23,13 +23,11 @@ These critical boundaries are calculated by an incremental method and the rule s
 The significance function is defined for these intervals.
 }
 \examples{
-if(interactive()){
 ## Load a Dataset
 data(EGATUR)
 ## Generate a CREA-RBS model, remmember only support discretized variables
 CREA.RBS(GastoTotalD~pais+aloja+motivo,data=EGATUR)
 
-}
 
 
 }

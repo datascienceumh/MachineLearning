@@ -20,9 +20,10 @@
 #'
 #' @examples
 #' ## Load a Dataset
+#' \dontrun{
 #' data(EGATUR)
 #' modelFit <- Clustering(data=EGATUR[,c("A13","gastototal")])
-#'
+#'}
 #'
 #' @export
 Clustering <- function(data, n="auto", n_max=10, iter.max=10, auto_criterion=c("explainWSS","db", "ratkowsky", "ball","friedman"),confidenceWSS=0.9, agregate_method=median){

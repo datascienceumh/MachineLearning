@@ -17,11 +17,9 @@ sampler(data, p, seed = NULL)
 A training/test partition are created by \code{sampler} function.
 }
 \examples{
-if(interactive()){
 # The best way to demostrate the functionality is test the function
 Sampling <- sampler(EGATUR,p=0.7)
 
-}
 
 
 }

@@ -31,13 +31,11 @@ A MLA object of subclass CART
 Classification And Regression Tree is a simple technique to fit a relationship between numerical variables partitioning the target variable by a range of values of the explanatory variables. This function fits and graphs a cart model with a previous separation of training a testing datasets.
 }
 \examples{
-if(interactive()){
 ## Load a Dataset
 data(EGATUR)
 
 CART(GastoTotalD~pais+aloja+motivo,data=EGATUR)
 
-}
 
 
 }

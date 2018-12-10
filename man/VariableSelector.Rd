@@ -23,10 +23,8 @@ A MLA object of subclass Var-Rank
 A Ranker of variables
 }
 \examples{
-if(interactive()){
 ## Load a Dataset
 data(EGATUR)
 VariableRanker(formula=GastoTotalD~pais+aloja+motivo,EGATUR)
-}
 
 }

@@ -23,12 +23,10 @@ A MLA object of subclass AsociationRules
 This is a rule-based machine learning method to discover interesting relationships between a consequent and an antecedent (or group of antecedents) in large databases.
 }
 \examples{
-if(interactive()){
 ## Load a Dataset
 data(EGATUR)
 ## Generate an asociation rules with apriori, remmember only support discretized variables,
 ##  in this remove numerical variables.
 Rules <- AsociationRules(EGATUR[,c(2,4,5,8)])
 
-}
 }
