@@ -1,5 +1,7 @@
 # MachineLearning
 [![CRAN Version](https://www.r-pkg.org/badges/version/MachineLearning)](https://cran.r-project.org/web/packages/MachineLearning/)
+[![DataScienceUMH](https://img.shields.io/badge/DataScience-UMH-orange.svg)](https://img.shields.io/badge/DataScience-UMH-orange.svg)
+
 
 A collection of routines created in the collaboration framework in tourism innovation between the Valencian Tourism Agency (AVT) <http://www.turisme.gva.es/opencms/opencms/turisme/es/index.jsp> and the Miguel Hernandez University. 
 The package provides a set of machine learning tools for pattern  detection, association and classification rules and feature selection even under massive data environments.
