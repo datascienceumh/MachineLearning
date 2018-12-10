@@ -1,0 +1,6 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^cran-comments\.md$
+^appveyor\.yml$
+^\.travis\.yml$
+^LICENSE$
