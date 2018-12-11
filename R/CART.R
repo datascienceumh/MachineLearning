@@ -106,7 +106,7 @@ CART <- function(formula, data, p = 0.7, nodes_min = 2, nodes_max = 18, included
       SummaryTrees[, 7],
       decreasing = TRUE
     ), ]
-    cp <- SummaryTrees$cp[1]
+    cp <- SummaryTrees$CP[1]
   }
 
   if (nrow(tree$cptable) > nodes_max) {
@@ -148,7 +148,7 @@ CART <- function(formula, data, p = 0.7, nodes_min = 2, nodes_max = 18, included
       SummaryTrees[, 7],
       decreasing = TRUE
     ), ]
-    cp <- SummaryTrees$cp[1]
+    cp <- SummaryTrees$CP[1]
   }
 
   if (nrow(tree$cptable) > nodes_min | nrow(tree$cptable) < nodes_max) {
@@ -184,13 +184,13 @@ CART <- function(formula, data, p = 0.7, nodes_min = 2, nodes_max = 18, included
       tii_error = unlist(error_tII),
       Nnodes = unlist(nodes)
     )
-    SummaryTrees <- SummaryTrees[which(SummaryTrees$Nnodes < nodes_max && SummaryTrees$Nnodes > nodes_min), ]
+    SummaryTrees <- SummaryTrees[which(SummaryTrees$Nnodes < nodes_max & SummaryTrees$Nnodes > nodes_min), ]
     SummaryTrees <- SummaryTrees[order(SummaryTrees[, 2],
       SummaryTrees[, 4],
       SummaryTrees[, 7],
       decreasing = TRUE
     ), ]
-    cp <- SummaryTrees$cp[1]
+    cp <- SummaryTrees$CP[1]
   }
   tree <- rpart::rpart(
     formula = formula, data = training, na.action = rpart::na.rpart,
