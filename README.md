@@ -8,6 +8,11 @@ The package provides a set of machine learning tools for pattern  detection, ass
 
 ## Installation
 
+### Install this package from CRAN (stable version):
+
+```r
+install.packages("MachineLearning")
+```
 ### Install this package from Github (development version):
 
 For this, you can choose different packages such as:
