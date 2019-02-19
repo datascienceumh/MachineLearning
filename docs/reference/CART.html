@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">MachineLearning</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.2</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.2.9000</span>
       </span>
     </div>
 
@@ -152,19 +152,11 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Load a Dataset</span>
+    <pre class="examples"><div class='input'>## Load a Dataset
+ </div><span class='co'># NOT RUN {</span>
 <span class='fu'>data</span>(<span class='no'>EGATUR</span>)
-
-<span class='fu'>CART</span>(<span class='no'>GastoTotalD</span>~<span class='no'>pais</span>+<span class='no'>aloja</span>+<span class='no'>motivo</span>,<span class='kw'>data</span><span class='kw'>=</span><span class='no'>EGATUR</span>)</div><div class='output co'>#&gt;  successful models have been tested 
-#&gt;  
-#&gt; n= 10689 
-#&gt; 
-#&gt; node), split, n, loss, yval, (yprob)
-#&gt;       * denotes terminal node
-#&gt; 
-#&gt; 1) root 10689 1688 [17,1.67e+03) (0.842080644 0.151277014 0.006642343) *</div><div class='input'>
-
-
+<span class='fu'>CART</span>(<span class='no'>GastoTotalD</span>~<span class='no'>pais</span>+<span class='no'>aloja</span>+<span class='no'>motivo</span>,<span class='kw'>data</span><span class='kw'>=</span><span class='no'>EGATUR</span>)
+<span class='co'># }</span><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
