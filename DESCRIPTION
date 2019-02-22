@@ -1,6 +1,6 @@
 Package: MachineLearning
 Title: Machine Learning Algorithms for Innovation in Tourism
-Version: 0.0.3
+Version: 0.0.3.9000
 Authors@R: c( 
     person("Agustin", "Perez-Martin", email = "agustin.perez@umh.es", role = "aut", comment = c(ORCID = "0000-0003-4994-3176")),
     person("Agustin", "Perez-Torregrosa", email = "agustin.perez01@goumh.umh.es", role =c("cre","aut"), comment = c(ORCID = "0000-0001-5658-4795")),

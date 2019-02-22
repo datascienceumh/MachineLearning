@@ -98,12 +98,12 @@ summary.MLA <- function(x, first=100, digits = getOption("digits"), ...) {
 }
 
 #### General Plot of MLA ####
-plot.MLA <- function(object,...){
+plot.MLA <- function(object,simply=FALSE,...){
   if (!inherits(object, "MLA")) stop("Not a legitimate \"MLA\" object")
 
   switch(object[[1]],
          "CART" = {
-           plotCART(object[[2]])
+           plotCART(object[[2]],ownlabs=simply)
          },
          "GainRatio"={
            plotSelector(object[[2]])
@@ -115,8 +115,32 @@ plot.MLA <- function(object,...){
 
 
 #### Helpers to plot for MLA class ####
-plotCART <- function(x){
-rpart.plot(x)
+plotCART <- function(x,ownlabs=TRUE){
+  if(ownlabs==FALSE){
+    rpart.plot(x)
+  } else{
+    nodeCLASS <- function(x, labs, digits, varlen) {
+      data <- as.data.frame(do.call("rbind", strsplit(labs,"\n")),stringsAsFactors = FALSE)
+      Matriz <- do.call("rbind",strsplit(data$V2,"  "))
+      Matriz <- apply(Matriz, 1,as.numeric)*100
+      Matriz <- apply(Matriz, 2,function(x) paste0(x, "%",collapse="  "))
+      data[,2] <- Matriz
+      apply(data,1,function(x) paste0(x, collapse="\n"))
+    }
+
+    nodeBIN <- function(x, labs, digits, varlen) {
+      data <- as.data.frame(do.call("rbind", strsplit(labs,"\n")),stringsAsFactors = FALSE)
+      Matriz <- do.call("rbind",strsplit(data$V2,"  "))
+      Matriz <- apply(Matriz, 1,as.numeric)*100
+      Matriz <- apply(Matriz, 2,function(x) paste0(x, "%",collapse="  "))
+      data[,2] <- Matriz
+      apply(data,1,function(x) paste0(x, collapse="\n"))
+    }
+    nodeREG <- function(x, labs, digits, varlen) {
+      paste(x)
+    }
+    rpart.plot(x)
+  }
   }
 
 utils::globalVariables("importance")
