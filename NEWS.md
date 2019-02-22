@@ -1,4 +1,4 @@
-# MachineLearning 0.0.2.9000
+# MachineLearning 0.0.3
 * Fix a bug in CART function
 
 # MachineLearning 0.0.2

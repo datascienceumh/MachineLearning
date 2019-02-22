@@ -15,4 +15,3 @@
 
 * This is a new release.
 
-* In Fedora Linux Rhub machine,it fails because "spelling" package is not available
