@@ -93,11 +93,13 @@ printSelector <- function(x){
 
 
 #### General Summary of MLA ####
+#' @export
 summary.MLA <- function(x, first=100, digits = getOption("digits"), ...) {
   print(x)
 }
 
 #### General Plot of MLA ####
+#' @export
 plot.MLA <- function(object,simply=FALSE,...){
   if (!inherits(object, "MLA")) stop("Not a legitimate \"MLA\" object")
 
