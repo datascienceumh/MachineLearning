@@ -26,7 +26,6 @@
 
 #' @export
 #### General Print of MLA ####
-### MassiveDataAnalysis, MachineLearning, DataMining
 print.MLA <- function(x, first=100 ,digits = getOption("digits"), ...) {
 
   if (!inherits(x, "MLA")) stop("Not a legitimate \"MLA\" object")
@@ -94,29 +93,30 @@ printSelector <- function(x){
 
 #### General Summary of MLA ####
 #' @export
-summary.MLA <- function(x, first=100, digits = getOption("digits"), ...) {
-  print(x)
+summary.MLA <- function(object, ...) {
+  print(object)
 }
 
 #### General Plot of MLA ####
 #' @export
-plot.MLA <- function(object,simply=FALSE,...){
-  if (!inherits(object, "MLA")) stop("Not a legitimate \"MLA\" object")
+plot.MLA <- function(x,simply=FALSE,...){
+  if (!inherits(x, "MLA")) stop("Not a legitimate \"MLA\" object")
 
-  switch(object[[1]],
+  switch(x[[1]],
          "CART" = {
-           plotCART(object[[2]],ownlabs=simply)
+           plotCART(x[[2]],ownlabs=simply)
          },
          "GainRatio"={
-           plotSelector(object[[2]])
+           plotSelector(x[[2]])
          },
          {
-           warning(paste0('So sorry, this method is not yet implemented for ', object[[1]]))
+           warning(paste0('So sorry, this method is not yet implemented for ', x[[1]]))
          }
   )}
 
 
 #### Helpers to plot for MLA class ####
+#' @export
 plotCART <- function(x,ownlabs=TRUE){
   if(ownlabs==FALSE){
     rpart.plot(x)

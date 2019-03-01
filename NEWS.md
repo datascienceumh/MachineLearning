@@ -1,4 +1,6 @@
 # MachineLearning 0.0.3.9000 DEVEL VERSION
+* Refix CART function plot & summary method
+* Update Exports
 * 
 
 # MachineLearning 0.0.3
