@@ -56,7 +56,7 @@ CART <- function(formula, data, p = 0.7, nodes_min = 2, nodes_max = 18, included
 
   tree <- rpart::rpart(
     formula = formula, data = training, na.action = rpart::na.rpart,
-    model = FALSE, x = FALSE, y = FALSE, cp = 0.01, ...
+    model = TRUE, x = FALSE, y = FALSE, cp = 0.01, ...
   )
 
   orig_predict <- predict(tree, testing, type = ifelse(test_type,
@@ -66,7 +66,7 @@ CART <- function(formula, data, p = 0.7, nodes_min = 2, nodes_max = 18, included
   if (nrow(tree$cptable) < nodes_min) {
     newtree <- rpart::rpart(
       formula = formula, data = training, na.action = rpart::na.rpart,
-      model = FALSE, x = FALSE, y = FALSE, cp = 0, ...
+      model = TRUE, x = FALSE, y = FALSE, cp = 0, ...
     )
     cptest <- unique(newtree$frame$complexity[newtree$frame$complexity < 0.01 & newtree$frame$complexity > 0])
     cptest <- cptest[order(cptest, decreasing = TRUE)] # df[order(df[,1],df[,2],decreasing=TRUE),]
@@ -194,7 +194,7 @@ CART <- function(formula, data, p = 0.7, nodes_min = 2, nodes_max = 18, included
   }
   tree <- rpart::rpart(
     formula = formula, data = training, na.action = rpart::na.rpart,
-    model = FALSE, x = FALSE, y = FALSE, cp = cp, ...
+    model = TRUE, x = FALSE, y = FALSE, cp = cp, ...
   )
 
   predict_final <- predict(tree, testing, type = ifelse(test_type,

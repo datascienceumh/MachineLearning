@@ -1,11 +1,11 @@
 #' Ranks of importance variables
 #'
-#' @name VariableSelector
+#' @name VariableRanker
 #' @description A Ranker of variables
 #'
-#' @param formula A character object that contain the name of response variable about which a researcher is asking a question. Default value: "Y"
+#' @param formula a formula of the form y ~ x1 + x2 + ...
 #' @param data the data frame that contains the variables specified in \code{formula}.
-#' @param based Methodology used to rank variables. The options available are informationgain, gainratio and symmetrical.uncertainty.
+#' @param based methodology used to rank variables. The options available are informationgain, gainratio and symmetrical.uncertainty.
 #' @param ... further arguments passed to or from other methods.
 #'
 #' @return A MLA object of subclass Var-Rank
