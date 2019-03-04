@@ -98,6 +98,16 @@ summary.MLA <- function(object, ...) {
 }
 
 #### General Plot of MLA ####
+#' Plot MLA object
+#'
+#' @name plot.MLA
+#' @description This function plot an MLA object. It is a method for the generic function plot.
+#'
+#' @param x object of class "MLA"
+#' @param simply Allow to simplify the view of nodes, in case of MLA object is a CART. Default value is FALSE.
+
+#' @param ... further arguments passed to or from other methods.
+#'
 #' @export
 plot.MLA <- function(x,simply=FALSE,...){
   if (!inherits(x, "MLA")) stop("Not a legitimate \"MLA\" object")
@@ -116,8 +126,24 @@ plot.MLA <- function(x,simply=FALSE,...){
 
 
 #### Helpers to plot for MLA class ####
+#' Plot rpart or MLA object
+#'
+#' @name plotCART
+#' @description This function plot an MLA object or a rpart.
+#'
+#' @param x object of class "MLA" or "rpart".
+#' @param ownlabs Allow to simplify the view of nodes. Default value is TRUE.
+
+#' @param ... further arguments passed to or from other methods.
+#'
+
+
 #' @export
 plotCART <- function(x,ownlabs=TRUE){
+  if (!inherits(x, "MLA") | !inherits(x, "rpart")) stop("Not a legitimate \"MLA\" or \"rpart\" object")
+  if(inherits(x, "MLA")){
+    x <- x[[2]]
+  }
   if(ownlabs==FALSE){
     rpart.plot(x)
   } else{
