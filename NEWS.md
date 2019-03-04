@@ -1,7 +1,8 @@
-# MachineLearning 0.0.3.9002 DEVEL VERSION
+# MachineLearning 0.0.3.9004 DEVEL VERSION
 * Refix CART function plot & summary method
 * Fix consistence of MLA S3methods 
 * New indepedent function for CART plot with compatibility with Rpart plots (Unstable version)
+* New autotest for several functions
 
 # MachineLearning 0.0.3.9000 DEVEL VERSION (Not CRAN)
 * Refix CART function plot & summary method
