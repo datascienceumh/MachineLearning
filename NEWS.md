@@ -3,7 +3,6 @@
 * Fix consistence of MLA S3methods 
 * New indepedent function for CART plot with compatibility with Rpart plots (Unstable version)
 
-=======
 # MachineLearning 0.0.3.9000 DEVEL VERSION (Not CRAN)
 * Refix CART function plot & summary method
 * Update Exports
