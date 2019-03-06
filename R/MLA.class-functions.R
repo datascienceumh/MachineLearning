@@ -140,7 +140,7 @@ plot.MLA <- function(x,simply=FALSE,...){
 
 #' @export
 plotCART <- function(x,ownlabs=TRUE){
-  if (!inherits(x, "MLA") | !inherits(x, "rpart")) stop("Not a legitimate \"MLA\" or \"rpart\" object")
+  if (!inherits(x, c("MLA", "rpart"))) stop("Not a legitimate \"MLA\" or \"rpart\" object")
   if(inherits(x, "MLA")){
     x <- x[[2]]
   }
