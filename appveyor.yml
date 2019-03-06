@@ -16,7 +16,7 @@ cache:
 # Adapt as necessary starting from here
 
 build_script:
-  - travis-tool.sh install_github tidyverse/purr
+  - travis-tool.sh install_github tidyverse/purrr
   - travis-tool.sh install_deps
 
 test_script:
