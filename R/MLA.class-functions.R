@@ -40,7 +40,7 @@ print.MLA <- function(x, first=100 ,digits = getOption("digits"), ...) {
            printCREARBS(x[[2]])
          },
          "Association"={
-           printAsociationRules(x[[2]],first=first, digits=digits)
+           printAssociationRules(x[[2]],first=first, digits=digits)
          },
          "Cluster"={
            printCluster(x[[2]])
@@ -63,7 +63,7 @@ printCART <- function(x, decimals=getOption("digits")) {
 }
 
 # Print Asociation Rules
-printAsociationRules  <- function(x, first=100, digits = getOption("digits")) {
+printAssociationRules  <- function(x, first=100, digits = getOption("digits")) {
 
   if(length(arules::size(x))>first){
     printable_rules <- x[1:first,]
