@@ -5,7 +5,7 @@
 \title{A simple and powerful function to create clusters with KMeans}
 \usage{
 Clustering(data, n = "auto", n_max = 10, iter.max = 10,
-  auto_criterion = c("explainWSS", "db", "ratkowsky", "ball",
+  auto_criterion = c("explainwss", "db", "ratkowsky", "ball",
   "friedman"), confidenceWSS = 0.9, agregate_method = median)
 }
 \arguments{
@@ -17,18 +17,25 @@ Clustering(data, n = "auto", n_max = 10, iter.max = 10,
 
 \item{iter.max}{the maximum number of iterations allowed.}
 
-\item{auto_criterion}{the available criterions are: "explainWSS",
+\item{auto_criterion}{the available criterions are: "explainwss",
 "db", "ratkowsky", "ball" and "friedman".}
 
 \item{confidenceWSS}{a confidence interval for criterion WSS.}
 
 \item{agregate_method}{a function to agregate results of different methods. Default value=median}
 }
-\value{
-A MLA object of subclass Clustering
-}
 \description{
 This is a modified kmeans clustering technique to automatize the number of groups or clusters that can be partitioned the sample. Several techniques are used to obtain the best number of clusters.
+}
+\details{
+Several methods are available in order to obtain the best number of clusters:
+explainwss = Within-cluster Sum of Square
+db
+ratkowsky
+ball
+friedman
+
+ @return A MLA object of subclass Clustering
 }
 \examples{
 ## Load a Dataset

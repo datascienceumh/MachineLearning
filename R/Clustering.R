@@ -7,12 +7,20 @@
 #' @param n Data frame which numeric variables.
 #' @param iter.max the maximum number of iterations allowed.
 #' @param n_max maximal number of clusters, between 2 and (number of objects - 1), greater or equal to n_min. By default, n_max=10.
-#' @param auto_criterion the available criterions are: "explainWSS",
+#' @param auto_criterion the available criterions are: "explainwss",
 #'  "db", "ratkowsky", "ball" and "friedman".
 #' @param confidenceWSS a confidence interval for criterion WSS.
 #' @param agregate_method a function to agregate results of different methods. Default value=median
 
-#' @return A MLA object of subclass Clustering
+
+#' @details Several methods are available in order to obtain the best number of clusters:
+#' explainwss = Within-cluster Sum of Square
+#' db
+#' ratkowsky
+#' ball
+#' friedman
+#'
+#'  @return A MLA object of subclass Clustering
 #' @importFrom stats kmeans median var
 #' @importFrom NbClust NbClust
 #' @import formula.tools
@@ -26,8 +34,8 @@
 #'}
 #'
 #' @export
-Clustering <- function(data, n="auto", n_max=10, iter.max=10, auto_criterion=c("explainWSS","db", "ratkowsky", "ball","friedman"),confidenceWSS=0.9, agregate_method=median){
-
+Clustering <- function(data, n="auto", n_max=10, iter.max=10, auto_criterion=c("explainwss","db", "ratkowsky", "ball","friedman"),confidenceWSS=0.9, agregate_method=median){
+    Iters <- list()
     if(class(n)=="character"){
       if(n!="auto"){
 
@@ -36,9 +44,10 @@ Clustering <- function(data, n="auto", n_max=10, iter.max=10, auto_criterion=c("
          } # End If different of auto
        recommended <- NULL
       #Se inicia a buscar el optimo
-      if(length(intersect(auto_criterion,"explainWSS"))==1){
+      if(length(intersect(auto_criterion,"explainwss"))==1){
         WSS <- WSSOptimizer(dataPassed = data,maxCluster = n_max,confidence = confidenceWSS)
         recommended <- rbind(recommended,WSS[[2]])
+        names(recommended) <- "WSS"
       }
        ## Ahora vamos con los que usan NbClust
        Metodos <- intersect(auto_criterion,c("db", "ratkowsky", "ball", "friedman"))
@@ -50,13 +59,17 @@ Clustering <- function(data, n="auto", n_max=10, iter.max=10, auto_criterion=c("
 
        n_recommended <- round(agregate_method(recommended, na.rm = TRUE),0)
        n <- n_recommended
+       Iters[[1]] <- recommended
+       names(Iters[[1]]) <- gsub(".Number_clusters","",names(Iters[[1]]))
+       Iters[[2]] <- agregate_method
     }
 
   model <- kmeans(data, centers = n, iter.max = iter.max)
 
   out <- list(Subclass="Clustering",
                 Model=model,
-                Summary=NULL
+                Summary=NULL,
+                Iters=Iters
               )
 
   class(out) <- "MLA"

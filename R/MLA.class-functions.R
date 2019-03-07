@@ -31,7 +31,7 @@ print.MLA <- function(x, first=100 ,digits = getOption("digits"), ...) {
   if (!inherits(x, "MLA")) stop("Not a legitimate \"MLA\" object")
 
   switch(x[[1]],
-         "CART" = printCART(x[[2]], digits),
+         "CART" = printCART(x, digits),
 
          "Var-Rank"={
            printSelector(x[[2]])
@@ -42,8 +42,8 @@ print.MLA <- function(x, first=100 ,digits = getOption("digits"), ...) {
          "Association"={
            printAssociationRules(x[[2]],first=first, digits=digits)
          },
-         "Cluster"={
-           printCluster(x[[2]])
+         "Clustering"={
+           printCluster(x)
          }
 
 
@@ -54,11 +54,11 @@ print.MLA <- function(x, first=100 ,digits = getOption("digits"), ...) {
 printCART <- function(x, decimals=getOption("digits")) {
 
       cat(
-        nrow(x),
+        nrow(x[[3]]),
         format("successful models have been tested \n"),
         format("\n")
       )
-      print(x,digits=decimals)
+      print(x[[2]],digits=decimals)
 
 }
 
@@ -76,6 +76,9 @@ printAssociationRules  <- function(x, first=100, digits = getOption("digits")) {
 
 # Print Cluster
 printCluster <- function(x){
+  if(length(x[[4]])!=0){
+  cat(length(x[[4]][[1]]),"successful techniques are used to obtain the best number of clusters. \n")
+  }
   print(x)
 }
 
@@ -167,11 +170,17 @@ plotCART <- function(x,ownlabs=TRUE){
     nodeREG <- function(x, labs, digits, varlen) {
       paste(x)
     }
+    class <- NULL
+    nodefun <- switch(class,
+                        reg=nodeREG,
+                        bin=nodeBIN,
+                        class=nodeCLASS)
     rpart.plot(x)
   }
   }
 
 utils::globalVariables("importance")
+
 plotSelector <- function(x){
   Rank_graph <- x
   Rank_graph$attributes <- factor(Rank_graph$attributes, levels =  rev(Rank_graph$attributes))
