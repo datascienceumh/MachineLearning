@@ -25,8 +25,8 @@
 #' @export
 AssociationRules <- function(data, support = 0.2, confidence = 0.1 , minlength = 2){
 
-  rules <- arules::apriori(data, parameter = list(support = Support,
-                                         confidence = Confidence,
+  rules <- arules::apriori(data, parameter = list(support = support,
+                                         confidence = confidence,
                                          minlen=minlength))
   Info <- data.frame(NTransactions=rules@info$ntransactions,
                        Support=rules@info$support,
