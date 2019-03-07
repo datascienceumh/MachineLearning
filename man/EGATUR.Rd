@@ -2,9 +2,9 @@
 \alias{EGATUR}
 \docType{data}
 \title{
-egatur dataset
+EGATUR dataset
 }
-\description{egatur}
+\description{Tourist Expenditure Survey (EGATUR) is the response by the Spanish Tourist Authorities to the growing need for information by this sector.}
 \usage{data("EGATUR")}
 \format{
   A data frame with 30541 observations on the following 13 variables.
@@ -21,16 +21,15 @@ egatur dataset
   }
 }
 \details{
- If necessary, more details than the __description__ above ~~
+Tourist Expenditure Survey (EGATUR) is the response by the Spanish Tourist Authorities to the growing need for information by this sector, which is one of the major driving forces of the Spanish economy.
+The information provided by this survey makes it possible to ascertain with a greater degree of precision the volume of tourist expenditure by foreign visitors coming to Spain each month by different concepts, and to also analyse key aspects of their tourist behaviour.
+EGATUR makes it possible to improve strategic knowledge of variables regarding fundamental expenditure and tourist behaviour by visitors from other countries, and to a large extent compensate the loss of information which, in order to estimate the income and payment entries for tourism in the Balance of Payments, was being used by the Bank of Spain prior to the introduction of the Euro. Likewise it provides highly relevant information in terms of National Accounts estimates and, in particular, in estimating the main groups of the recent Tourism Satellite Account for Spain.
 }
-\source{
-reference to a publication or URL from which the data were obtained ~~
-}
+
 \references{
-Test
+‘EGATUR’,  available  at  http://www.ine.es/dyngs/inebase/es/operacion.htm?c=estadistica_c&cid=1254736177002&menu=ultidatos&idp=1254735576863
 }
 \examples{
 data(EGATUR)
-## maybe str(EGATUR) ; plot(EGATUR) ...
 }
 \keyword{datasets}
