@@ -168,14 +168,20 @@ plotCART <- function(x,ownlabs=TRUE){
       apply(data,1,function(x) paste0(x, collapse="\n"))
     }
     nodeREG <- function(x, labs, digits, varlen) {
-      paste(x)
-    }
-    class <- NULL
+      # save(x, labs,digits,varlen,file="Test.Rda")
+      #
+      # ValorEstimado <- x$frame$yval
+      # Confianza <- x$frame$n/x$frame$n[1]
+      # paste0(ValorEstimado,"\n",round(Confianza*100,2),"%")
+paste(labs)
+}
+    class <- x$method
     nodefun <- switch(class,
-                        reg=nodeREG,
-                        bin=nodeBIN,
-                        class=nodeCLASS)
-    rpart.plot(x)
+                        "anova"=nodeREG,
+                        "poisson"=nodeBIN,
+                        "class"=nodeCLASS,
+                          nodeREG)
+    rpart.plot(x,node.fun=nodefun)
   }
   }
 

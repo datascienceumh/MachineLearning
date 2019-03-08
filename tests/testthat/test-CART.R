@@ -11,4 +11,7 @@ test_that("Test CART with EGATUR dataset.", {
    # summary
   expect_is(summary(modelFit),"rpart")
 
+  modelFit2 <- CART(GastoTotalD~pais+aloja,data=EGATUR,nodes_min = 5)
+
+
 })
