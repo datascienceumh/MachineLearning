@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Print an MLA Object — print.MLA • MachineLearning</title>
+<title>Ranks of importance variables — VariableRanker • MachineLearning</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Print an MLA Object — print.MLA" />
+<meta property="og:title" content="Ranks of importance variables — VariableRanker" />
 
-<meta property="og:description" content="This function prints an MLA object. It is a method for the generic function print." />
+<meta property="og:description" content="A Ranker of variables" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -97,34 +97,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Print an MLA Object</h1>
+    <h1>Ranks of importance variables</h1>
     
-    <div class="hidden name"><code>print.MLA.Rd</code></div>
+    <div class="hidden name"><code>VariableRanker.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function prints an MLA object. It is a method for the generic function print.</p>
+    <p>A Ranker of variables</p>
     
     </div>
 
-    <pre class="usage"><span class='co'># S3 method for MLA</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>, <span class='kw'>first</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"digits"</span>), <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>VariableRanker</span>(<span class='no'>formula</span>, <span class='no'>data</span>, <span class='kw'>based</span> <span class='kw'>=</span> <span class='st'>"gainratio"</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>object of class "MLA"</p></td>
+      <th>formula</th>
+      <td><p>a formula of the form y ~ x1 + x2 + ...</p></td>
     </tr>
     <tr>
-      <th>first</th>
-      <td><p>When the print command shows a set of rules limits the number of rules.</p></td>
+      <th>data</th>
+      <td><p>the data frame that contains the variables specified in <code>formula</code>.</p></td>
     </tr>
     <tr>
-      <th>digits</th>
-      <td><p>minimal number of significant digits.</p></td>
+      <th>based</th>
+      <td><p>methodology used to rank variables. The options available are informationgain, gainratio and symmetrical.uncertainty.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -132,13 +131,29 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>A MLA object of subclass Var-Rank</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'>## Load a Dataset</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>EGATUR</span>)
+<span class='fu'>VariableRanker</span>(<span class='kw'>formula</span><span class='kw'>=</span><span class='no'>GastoTotalD</span>~<span class='no'>pais</span>+<span class='no'>aloja</span>+<span class='no'>motivo</span>,<span class='no'>EGATUR</span>)</div><div class='output co'>#&gt;   attributes  importance
+#&gt; 1       pais 0.049161047
+#&gt; 2      aloja 0.008279454
+#&gt; 3     motivo 0.004326729</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

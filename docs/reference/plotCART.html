@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Print an MLA Object — print.MLA • MachineLearning</title>
+<title>Plot rpart or MLA object — plotCART • MachineLearning</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Print an MLA Object — print.MLA" />
+<meta property="og:title" content="Plot rpart or MLA object — plotCART" />
 
-<meta property="og:description" content="This function prints an MLA object. It is a method for the generic function print." />
+<meta property="og:description" content="This function plot an MLA object or a rpart." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -97,34 +97,29 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Print an MLA Object</h1>
+    <h1>Plot rpart or MLA object</h1>
     
-    <div class="hidden name"><code>print.MLA.Rd</code></div>
+    <div class="hidden name"><code>plotCART.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function prints an MLA object. It is a method for the generic function print.</p>
+    <p>This function plot an MLA object or a rpart.</p>
     
     </div>
 
-    <pre class="usage"><span class='co'># S3 method for MLA</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>, <span class='kw'>first</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"digits"</span>), <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>plotCART</span>(<span class='no'>x</span>, <span class='kw'>ownlabs</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>object of class "MLA"</p></td>
+      <td><p>object of class "MLA" or "rpart".</p></td>
     </tr>
     <tr>
-      <th>first</th>
-      <td><p>When the print command shows a set of rules limits the number of rules.</p></td>
-    </tr>
-    <tr>
-      <th>digits</th>
-      <td><p>minimal number of significant digits.</p></td>
+      <th>ownlabs</th>
+      <td><p>Allow to simplify the view of nodes. Default value is TRUE.</p></td>
     </tr>
     <tr>
       <th>...</th>
