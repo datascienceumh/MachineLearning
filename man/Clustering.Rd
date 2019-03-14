@@ -30,10 +30,10 @@ This is a modified kmeans clustering technique to automatize the number of group
 \details{
 Several methods are available in order to obtain the best number of clusters:
 explainwss = Within-cluster Sum of Square
-db
-ratkowsky
-ball
-friedman
+db = Davies–Bouldin index (DBI). Davies and Bouldin (1979)
+ratkowsky = Ratkowsky and Lance (1978)
+ball = Ball and Hall (1965)
+friedman = Friedman and Rubin (1967)
 
  @return A MLA object of subclass Clustering
 }

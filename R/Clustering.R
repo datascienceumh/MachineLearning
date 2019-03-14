@@ -15,10 +15,11 @@
 
 #' @details Several methods are available in order to obtain the best number of clusters:
 #' explainwss = Within-cluster Sum of Square
-#' db
-#' ratkowsky
-#' ball
-#' friedman
+#' db = Davies–Bouldin index (DBI). Davies and Bouldin (1979)
+# is an internal evaluation scheme, where the validation of how well the clustering has been done is made using quantities and features inherent to the dataset. doi:10.1109/TPAMI.1979.4766909
+#' ratkowsky = Ratkowsky and Lance (1978)
+#' ball = Ball and Hall (1965)
+#' friedman = Friedman and Rubin (1967)
 #'
 #'  @return A MLA object of subclass Clustering
 #' @importFrom stats kmeans median var

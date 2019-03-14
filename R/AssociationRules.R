@@ -6,7 +6,7 @@
 #'
 #' @param data a data frame with discrete variables.
 #' @param support a numeric value for the minimun support of the antecedents (default: 0.2).
-#' @param confidence a numeric value for the minumun confidence of confidence in rule/association method (default: 0.8)
+#' @param confidence a numeric value for the minimun confidence of confidence in rule/association method (default: 0.8)
 #' @param minlength an integer value for the minimal number of items per item set (default: 2 item)
 #'
 #' @return A MLA object of subclass Association
