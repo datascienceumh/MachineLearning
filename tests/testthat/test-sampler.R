@@ -7,8 +7,8 @@ test_that("Test sampler with a easy example", {
   sample2 <-  sampler(simply$R,p=0.7, seed=22071993)
   sample_percent <-  sampler(simply$R,p=70, seed=22071993)
   expect_error(sampler(simply,p=700, seed=22071993), paste0(crayon::bold("p"), " must be a value between 0 and 1 or 0 and 100"), fixed=TRUE)
-  expect_equal(sample_percent[[2]], c(5,6,9,4,8,1))
-  expect_equal(sample[[2]], c(5,6,9,4,8,1))
   expect_equal(sample[[2]], sample2[[2]])
+  expect_equal(sample2[[2]], sample_percent[[2]])
+
 
 })
