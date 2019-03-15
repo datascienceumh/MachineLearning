@@ -37,10 +37,15 @@ sampler <- function(data, p,seed=NULL){
       stop(crayon::bold("p"), " must be a value between 0 and 1 or 0 and 100")
     }
   }
-
-  sample <- sample.int(n = nrow(data), size = floor(p*nrow(data)), replace = F)
+   n<- ifelse(is.vector(data),length(data),nrow(data))
+  sample <- sample.int(n = n, size = floor(p*n), replace = FALSE)
+  if(is.vector(data)){
+    training <- data[sample]
+    testing  <- data[-sample]
+  } else {
   training <- data[sample, ]
   testing  <- data[-sample, ]
+  }
   output2 <- list(Data=list(training=training,testing=testing), RowsTraining=sample)
   return(output2)
 
